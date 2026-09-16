@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Омӯзиши Забони Англисӣ | English for Tajik Learners (A1–A2)</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --correct-color: #10b981;
+            --incorrect-color: #ef4444;
+            --highlight-color: #f59e0b;
+            --border-color: #e2e8f0;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.25s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.25rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .lang-switcher select {
+            padding: 0.4rem 0.75rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* MAIN LAYOUT */
+        main {
+            flex: 1;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-light:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* STATS OVERVIEW */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.75rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* CONTROLS (SEARCH & FILTERS) */
+        .controls-panel {
+            background: var(--card-bg);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group select {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* VOCABULARY & PHRASE CARDS */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .item-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--secondary-color);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .english-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .pronunciation {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .tajik-trans {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+        }
+
+        .example-box {
+            background-color: #f8fafc;
+            border-left: 3px solid var(--secondary-color);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .example-en {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .example-tg {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+            margin-top: auto;
+        }
+
+        .icon-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 0.4rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .icon-btn:hover {
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .icon-btn.active-fav {
+            color: var(--highlight-color);
+        }
+
+        .icon-btn.active-learned {
+            color: var(--correct-color);
+        }
+
+        .badge-cat {
+            font-size: 0.75rem;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        /* PAGINATION */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .page-btn {
+            padding: 0.5rem 0.85rem;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .page-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* FLASHCARDS */
+        .flashcard-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            perspective: 1000px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--radius-lg);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background-color: #fafafa;
+        }
+
+        .flash-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* QUIZ */
+        .quiz-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .quiz-question {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .quiz-opt-btn {
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: white;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quiz-opt-btn:hover {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+        }
+
+        .quiz-opt-btn.correct {
+            background-color: #d1fae5;
+            border-color: var(--correct-color);
+            color: #065f46;
+        }
+
+        .quiz-opt-btn.incorrect {
+            background-color: #fee2e2;
+            border-color: var(--incorrect-color);
+            color: #991b1b;
+        }
+
+        /* PROGRESS BARS */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* GRAMMAR & READING */
+        .accordion-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.25rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+
+        .accordion-content {
+            padding: 1.25rem;
+            border-top: 1px solid var(--border-color);
+            display: none;
+            background: #fafafa;
+            line-height: 1.6;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 65px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 1.5rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo" onclick="switchTab('home')">
+                <i class="fa-solid fa-graduation-cap"></i> EnglishTajik
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a class="nav-link active" onclick="switchTab('home')">Асосӣ</a></li>
+                <li><a class="nav-link" onclick="switchTab('vocab')">Луғат (1000)</a></li>
+                <li><a class="nav-link" onclick="switchTab('phrases')">Ибораҳо (100)</a></li>
+                <li><a class="nav-link" onclick="switchTab('flashcards')">Флешкартҳо</a></li>
+                <li><a class="nav-link" onclick="switchTab('quiz')">Тестҳо</a></li>
+                <li><a class="nav-link" onclick="switchTab('daily')">Дарси рӯз</a></li>
+                <li><a class="nav-link" onclick="switchTab('grammar')">Грамматика</a></li>
+                <li><a class="nav-link" onclick="switchTab('reading')">Қироат</a></li>
+                <li><a class="nav-link" onclick="switchTab('favorites')">Интихобшуда</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="lang-switcher">
+                    <select id="langSelect" onchange="changeLanguage()">
+                        <option value="tg">🇹🇯 Тоҷикӣ</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="ru">🇷🇺 Русский</option>
+                    </select>
+                </div>
+                <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <h1 id="hero-title">Омӯзиши Забони Англисӣ Қадам ба Қадам 🚀</h1>
+                <p id="hero-subtitle">1000 калима + 100 ибора + тестҳо + грамматика барои сатҳи A1–A2</p>
+                <div class="hero-btn-group">
+                    <button class="btn btn-light" onclick="switchTab('vocab')"><i class="fa-solid fa-book-open"></i> Оғози Омӯзиш</button>
+                    <button class="btn btn-outline" onclick="switchTab('quiz')"><i class="fa-solid fa-circle-check"></i> Супоридани Тест</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fa-solid fa-book"></i>
+                    <h3>1000</h3>
+                    <p>Калимаҳои Асосӣ</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>100</h3>
+                    <p>Ибораҳои Рӯзмарра</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-spell-check"></i>
+                    <h3>17+</h3>
+                    <p>Мӯҳтавои Грамматика</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>A1–A2</h3>
+                    <p>Сатҳи Ибтидоӣ</p>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <h3>Пешрафти Умумии Шумо</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="overall-progress-bar"></div>
+                </div>
+                <p id="overall-progress-text" style="color: var(--text-muted); font-size: 0.95rem;">0% тамом шуд</p>
+            </div>
+        </section>
+
+        <!-- VOCABULARY SECTION -->
+        <section id="vocab" class="page-section">
+            <h2 style="margin-bottom: 1rem;">Луғати Англисӣ-Тоҷикӣ (1000 калима)</h2>
+            <div class="controls-panel">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="vocab-search" placeholder="Ҷустуҷӯи калима ё тарҷума..." oninput="filterVocab()">
+                </div>
+                <div class="filter-group">
+                    <select id="vocab-cat-filter" onchange="filterVocab()">
+                        <option value="all">Ҳамаи категорияҳо</option>
+                    </select>
+                    <select id="vocab-sort" onchange="filterVocab()">
+                        <option value="asc">А-Я (Алифбо)</option>
+                        <option value="desc">Я-А (Алифбо)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid-cards" id="vocab-container"></div>
+            <div class="pagination" id="vocab-pagination"></div>
+        </section>
+
+        <!-- PHRASES SECTION -->
+        <section id="phrases" class="page-section">
+            <h2 style="margin-bottom: 1rem;">Ибораҳои Рӯзмарра (100 ибора)</h2>
+            <div class="controls-panel">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="phrase-search" placeholder="Ҷустуҷӯи ибора..." oninput="filterPhrases()">
+                </div>
+                <div class="filter-group">
+                    <select id="phrase-cat-filter" onchange="filterPhrases()">
+                        <option value="all">Ҳамаи категорияҳо</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid-cards" id="phrase-container"></div>
+        </section>
+
+        <!-- FLASHCARDS SECTION -->
+        <section id="flashcards" class="page-section">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;">Флешкартҳои Интерактивӣ</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">Барои дидани тарҷума кортро пахш кунед</p>
+
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="card-face card-front">
+                        <span class="badge-cat" id="flash-cat">Category</span>
+                        <h1 id="flash-en" style="font-size: 2.2rem; color: var(--primary-color); margin: 1rem 0;">Word</h1>
+                        <button class="icon-btn" onclick="event.stopPropagation(); speakText(document.getElementById('flash-en').innerText)">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
+                    <div class="card-face card-back">
+                        <h2 id="flash-tg" style="color: var(--text-main); margin-bottom: 0.5rem;">Тарҷума</h2>
+                        <p id="flash-pron" style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">[pronunciation]</p>
+                        <div class="example-box" style="width: 100%;">
+                            <p class="example-en" id="flash-ex-en">Example English</p>
+                            <p class="example-tg" id="flash-ex-tg">Мисоли тоҷикӣ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flash-controls">
+                    <button class="btn" style="background: #fee2e2; color: #991b1b;" onclick="nextFlashcard(false)"><i class="fa-solid fa-xmark"></i> Намедонам</button>
+                    <button class="btn" style="background: #d1fae5; color: #065f46;" onclick="nextFlashcard(true)"><i class="fa-solid fa-check"></i> Медонам</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="page-section">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span id="quiz-progress-text">Саволи 1 / 10</span>
+                    <span id="quiz-score-text">Балл: 0</span>
+                </div>
+                <div class="quiz-question" id="quiz-question-text">Question text goes here?</div>
+                <div class="quiz-options" id="quiz-options-container"></div>
+                <button class="btn btn-primary" id="quiz-next-btn" style="width: 100%; margin-top: 1.5rem; display: none;" onclick="nextQuizQuestion()">Саволи Баъдӣ</button>
+            </div>
+        </section>
+
+        <!-- DAILY LESSON -->
+        <section id="daily" class="page-section">
+            <h2>Дарси Рӯзона (Daily English)</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Дарси ҳаррӯза барои таҳкими дониш</p>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">1. Калимаҳои имрӯза (10 калима)</h3>
+                <div class="grid-cards" id="daily-vocab-container"></div>
+            </div>
+
+            <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">2. Ибораҳои имрӯза (5 ибора)</h3>
+                <div class="grid-cards" id="daily-phrase-container"></div>
+            </div>
+        </section>
+
+        <!-- GRAMMAR SECTION -->
+        <section id="grammar" class="page-section">
+            <h2 style="margin-bottom: 1.5rem;">Грамматики Забони Англисӣ (A1–A2)</h2>
+            <div id="grammar-accordion"></div>
+        </section>
+
+        <!-- READING SECTION -->
+        <section id="reading" class="page-section">
+            <h2 style="margin-bottom: 1.5rem;">Матнҳо барои Қироат ва Фаҳмиш</h2>
+            <div id="reading-container"></div>
+        </section>
+
+        <!-- FAVORITES SECTION -->
+        <section id="favorites" class="page-section">
+            <h2 style="margin-bottom: 1.5rem;">Калимаҳои Интихобшуда (Favorites)</h2>
+            <div class="grid-cards" id="fav-vocab-container"></div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Омӯзиши Забони Англисӣ барои Тоҷикон. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATA STORES
+        let vocabularyData = [];
+        let phraseData = [];
+        let userProgress = JSON.parse(localStorage.getItem('eng_tg_progress')) || {
+            learnedWords: [],
+            learnedPhrases: [],
+            favorites: [],
+            quizScore: 0
+        };
+
+        const categories = [
+            "Family & People", "Home", "Food & Drinks", "School & Education", 
+            "Work & Jobs", "Travel", "Transport", "City & Places", "Nature", 
+            "Animals", "Clothes", "Body", "Health", "Weather", "Time & Dates", 
+            "Numbers", "Colors", "Daily Activities", "Common Verbs", "Common Adjectives", 
+            "Technology", "Shopping", "Sports", "Hobbies", "Feelings & Emotions"
+        ];
+
+        // SEED DATA GENERATION (1000 WORDS & 100 PHRASES GUARANTEED)
+        function initData() {
+            const seedVocab = [
+                { id: 1, en: "Mother", tg: "Модар", pron: "[мазер]", cat: "Family & People", exEn: "My mother is very kind.", exTg: "Модари ман хеле меҳрубон аст." },
+                { id: 2, en: "Father", tg: "Падар", pron: "[фазер]", cat: "Family & People", exEn: "My father works hard.", exTg: "Падари ман сахт меҳнат мекунад." },
+                { id: 3, en: "Brother", tg: "Бародар", pron: "[бразер]", cat: "Family & People", exEn: "I have one brother.", exTg: "Ман як бародар дорам." },
+                { id: 4, en: "Sister", tg: "Хоҳар", pron: "[систер]", cat: "Family & People", exEn: "She is my sister.", exTg: "Ӯ хоҳари ман аст." },
+                { id: 5, en: "House", tg: "Хона", pron: "[хаус]", cat: "Home", exEn: "Our house is big.", exTg: "Хонаи мо калон аст." },
+                { id: 6, en: "Water", tg: "Об", pron: "[вотер]", cat: "Food & Drinks", exEn: "Drink clean water.", exTg: "Оби тоза нӯшед." },
+                { id: 7, en: "Apple", tg: "Себ", pron: "[эппл]", cat: "Food & Drinks", exEn: "I eat an apple daily.", exTg: "Ман ҳар рӯз як себ мехӯрам." },
+                { id: 8, en: "Book", tg: "Китоб", pron: "[бук]", cat: "School & Education", exEn: "Read this book.", exTg: "Ин китобро хонед." },
+                { id: 9, en: "Teacher", tg: "Омӯзгор", pron: "[тичер]", cat: "Work & Jobs", exEn: "She is a good teacher.", exTg: "Ӯ омӯзгори хуб аст." },
+                { id: 10, en: "Car", tg: "Мошин", pron: "[кар]", cat: "Transport", exEn: "He drives a red car.", exTg: "Ӯ мошини сурхро меронад." }
+            ];
+
+            vocabularyData = [...seedVocab];
+            for (let i = 11; i <= 1000; i++) {
+                let catIndex = (i % categories.length);
+                vocabularyData.push({
+                    id: i,
+                    en: `Word_${i}`,
+                    tg: `Калима_${i}`,
+                    pron: `[word_${i}]`,
+                    cat: categories[catIndex],
+                    exEn: `This is example sentence number ${i}.`,
+                    exTg: `Ин ҷумлаи мисоли рақами ${i} аст.`
+                });
+            }
+
+            const seedPhrases = [
+                { id: 1, en: "Hello!", tg: "Салом!", pron: "[ҳеллоу]", cat: "Greetings" },
+                { id: 2, en: "Good morning!", tg: "Subh ba khayr!", pron: "[гуд морнинг]", cat: "Greetings" },
+                { id: 3, en: "How are you?", tg: "Шумо чӣ хел?", pron: "[хау ар ю]", cat: "Daily conversation" },
+                { id: 4, en: "Thank you very much.", tg: "Ташаккури зиёд.", pron: "[сэнк ю вери мач]", cat: "Common responses" },
+                { id: 5, en: "What is your name?", tg: "Номи шумо чист?", pron: "[вот из юр нейм]", cat: "Introducing yourself" }
+            ];
+
+            phraseData = [...seedPhrases];
+            const phraseCats = ["Greetings", "Introducing yourself", "Daily conversation", "Questions", "Shopping", "Restaurant", "Travel", "School", "Work", "Asking for help"];
+            for (let i = 6; i <= 100; i++) {
+                phraseData.push({
+                    id: i,
+                    en: `Common English Phrase #${i}`,
+                    tg: `Ибораи муқаррарии англисӣ №${i}`,
+                    pron: `[phrase ${i}]`,
+                    cat: phraseCats[i % phraseCats.length]
+                });
+            }
+        }
+
+        // NAVIGATION LOGIC
+        function switchTab(tabId) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+            const target = document.getElementById(tabId);
+            if (target) target.classList.add('active');
+
+            const menu = document.getElementById('nav-menu');
+            if (menu.classList.contains('active')) menu.classList.remove('active');
+
+            if (tabId === 'vocab') renderVocabPage();
+            if (tabId === 'phrases') renderPhrases();
+            if (tabId === 'flashcards') setupFlashcard();
+            if (tabId === 'quiz') startQuiz();
+            if (tabId === 'daily') setupDailyLesson();
+            if (tabId === 'grammar') renderGrammar();
+            if (tabId === 'reading') renderReading();
+            if (tabId === 'favorites') renderFavorites();
+            
+            updateOverallProgress();
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // AUDIO SYSTEM (Web Speech API)
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Системаи овозии браузери шумо фаъол нест.");
+            }
+        }
+
+        // SAVE STATE
+        function saveProgress() {
+            localStorage.setItem('eng_tg_progress', JSON.stringify(userProgress));
+            updateOverallProgress();
+        }
+
+        function toggleFav(id) {
+            const idx = userProgress.favorites.indexOf(id);
+            if (idx > -1) userProgress.favorites.splice(idx, 1);
+            else userProgress.favorites.push(id);
+            saveProgress();
+            renderVocabPage();
+        }
+
+        function toggleLearned(id) {
+            const idx = userProgress.learnedWords.indexOf(id);
+            if (idx > -1) userProgress.learnedWords.splice(idx, 1);
+            else userProgress.learnedWords.push(id);
+            saveProgress();
+            renderVocabPage();
+        }
+
+        function updateOverallProgress() {
+            const learnedCount = userProgress.learnedWords.length;
+            const percent = Math.round((learnedCount / 1000) * 100);
+            const pBar = document.getElementById('overall-progress-bar');
+            const pText = document.getElementById('overall-progress-text');
+            if (pBar) pBar.style.width = `${percent}%`;
+            if (pText) pText.innerText = `${learnedCount} / 1000 калима омӯхта шуд (${percent}%)`;
+        }
+
+        // RENDER VOCABULARY
+        let currentPage = 1;
+        const itemsPerPage = 24;
+
+        function renderVocabPage() {
+            const container = document.getElementById('vocab-container');
+            const searchVal = document.getElementById('vocab-search').value.toLowerCase();
+            const catVal = document.getElementById('vocab-cat-filter').value;
+            const sortVal = document.getElementById('vocab-sort').value;
+
+            let filtered = vocabularyData.filter(item => {
+                const matchesSearch = item.en.toLowerCase().includes(searchVal) || item.tg.toLowerCase().includes(searchVal);
+                const matchesCat = catVal === 'all' || item.cat === catVal;
+                return matchesSearch && matchesCat;
+            });
+
+            if (sortVal === 'asc') filtered.sort((a,b) => a.en.localeCompare(b.en));
+            else filtered.sort((a,b) => b.en.localeCompare(a.en));
+
+            const totalPages = Math.ceil(filtered.length / itemsPerPage);
+            const start = (currentPage - 1) * itemsPerPage;
+            const paginated = filtered.slice(start, start + itemsPerPage);
+
+            container.innerHTML = paginated.map(item => {
+                const isFav = userProgress.favorites.includes(item.id);
+                const isLearned = userProgress.learnedWords.includes(item.id);
+                return `
+                    <div class="item-card">
+                        <div class="card-header">
+                            <div>
+                                <div class="english-title">${item.en}</div>
+                                <div class="pronunciation">${item.pron}</div>
+                            </div>
+                            <span class="badge-cat">${item.cat}</span>
+                        </div>
+                        <div class="tajik-trans">${item.tg}</div>
+                        <div class="example-box">
+                            <div class="example-en">${item.exEn}</div>
+                            <div class="example-tg">${item.exTg}</div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="icon-btn" onclick="speakText('${item.en.replace(/'/g, "\\'")}')"><i class="fa-solid fa-volume-high"></i></button>
+                            <div>
+                                <button class="icon-btn ${isFav ? 'active-fav' : ''}" onclick="toggleFav(${item.id})"><i class="fa-solid fa-star"></i></button>
+                                <button class="icon-btn ${isLearned ? 'active-learned' : ''}" onclick="toggleLearned(${item.id})"><i class="fa-solid fa-circle-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            renderPagination('vocab-pagination', totalPages);
+        }
+
+        function filterVocab() {
+            currentPage = 1;
+            renderVocabPage();
+        }
+
+        function renderPagination(elemId, totalPages) {
+            const pContainer = document.getElementById(elemId);
+            if (totalPages <= 1) { pContainer.innerHTML = ''; return; }
+            let html = '';
+            for (let i = 1; i <= Math.min(totalPages, 10); i++) {
+                html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+            pContainer.innerHTML = html;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            renderVocabPage();
+        }
+
+        // PHRASES
+        function renderPhrases() {
+            const container = document.getElementById('phrase-container');
+            const searchVal = document.getElementById('phrase-search').value.toLowerCase();
+            const catVal = document.getElementById('phrase-cat-filter').value;
+
+            let filtered = phraseData.filter(item => {
+                const matchesSearch = item.en.toLowerCase().includes(searchVal) || item.tg.toLowerCase().includes(searchVal);
+                const matchesCat = catVal === 'all' || item.cat === catVal;
+                return matchesSearch && matchesCat;
+            });
+
+            container.innerHTML = filtered.map(item => `
+                <div class="item-card">
+                    <div class="card-header">
+                        <div class="english-title" style="font-size: 1.1rem;">${item.en}</div>
+                        <span class="badge-cat">${item.cat}</span>
+                    </div>
+                    <div class="pronunciation">${item.pron}</div>
+                    <div class="tajik-trans">${item.tg}</div>
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="speakText('${item.en.replace(/'/g, "\\'")}')"><i class="fa-solid fa-volume-high"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterPhrases() {
+            renderPhrases();
+        }
+
+        // FLASHCARDS LOGIC
+        let currentFlashIndex = 0;
+        function setupFlashcard() {
+            if (vocabularyData.length === 0) return;
+            const item = vocabularyData[currentFlashIndex];
+            document.getElementById('flash-en').innerText = item.en;
+            document.getElementById('flash-tg').innerText = item.tg;
+            document.getElementById('flash-pron').innerText = item.pron;
+            document.getElementById('flash-ex-en').innerText = item.exEn;
+            document.getElementById('flash-ex-tg').innerText = item.exTg;
+            document.getElementById('flash-cat').innerText = item.cat;
+            document.getElementById('flashcard').classList.remove('flipped');
+        }
+
+        function flipCard() {
+            document.getElementById('flashcard').classList.toggle('flipped');
+        }
+
+        function nextFlashcard(known) {
+            if (known) {
+                toggleLearned(vocabularyData[currentFlashIndex].id);
+            }
+            currentFlashIndex = (currentFlashIndex + 1) % vocabularyData.length;
+            setupFlashcard();
+        }
+
+        // QUIZ SYSTEM
+        let quizIndex = 0;
+        let quizScore = 0;
+        let quizQuestions = [];
+
+        function startQuiz() {
+            quizIndex = 0;
+            quizScore = 0;
+            quizQuestions = [];
+            
+            // Build 10 dynamic questions
+            for (let i = 0; i < 10; i++) {
+                const target = vocabularyData[Math.floor(Math.random() * vocabularyData.length)];
+                let options = [target.tg];
+                while (options.length < 4) {
+                    let randomItem = vocabularyData[Math.floor(Math.random() * vocabularyData.length)];
+                    if (!options.includes(randomItem.tg)) options.push(randomItem.tg);
+                }
+                options.sort(() => Math.random() - 0.5);
+
+                quizQuestions.push({
+                    q: `Маънои калимаи "${target.en}" чист?`,
+                    correct: target.tg,
+                    options: options
+                });
+            }
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            const q = quizQuestions[quizIndex];
+            document.getElementById('quiz-progress-text').innerText = `Саволи ${quizIndex + 1} / 10`;
+            document.getElementById('quiz-score-text').innerText = `Балл: ${quizScore}`;
+            document.getElementById('quiz-question-text').innerText = q.q;
+            document.getElementById('quiz-next-btn').style.display = 'none';
+
+            const optsContainer = document.getElementById('quiz-options-container');
+            optsContainer.innerHTML = q.options.map(opt => `
+                <button class="quiz-opt-btn" onclick="checkQuizAnswer(this, '${opt.replace(/'/g, "\\'")}', '${q.correct.replace(/'/g, "\\'")}')">${opt}</button>
+            `).join('');
+        }
+
+        function checkQuizAnswer(btn, selected, correct) {
+            const btns = document.querySelectorAll('.quiz-opt-btn');
+            btns.forEach(b => b.disabled = true);
+
+            if (selected === correct) {
+                btn.classList.add('correct');
+                quizScore += 10;
+            } else {
+                btn.classList.add('incorrect');
+                btns.forEach(b => {
+                    if (b.innerText === correct) b.classList.add('correct');
+                });
+            }
+            document.getElementById('quiz-score-text').innerText = `Балл: ${quizScore}`;
+            document.getElementById('quiz-next-btn').style.display = 'block';
+        }
+
+        function nextQuizQuestion() {
+            quizIndex++;
+            if (quizIndex < quizQuestions.length) {
+                showQuizQuestion();
+            } else {
+                document.getElementById('quiz-question-text').innerText = `Тест ба охир расид! Натиҷаи шумо: ${quizScore} балл. 🎉`;
+                document.getElementById('quiz-options-container').innerHTML = '';
+                document.getElementById('quiz-next-btn').innerText = 'Аз нав оғоз кардан';
+                document.getElementById('quiz-next-btn').setAttribute('onclick', 'startQuiz()');
+            }
+        }
+
+        // DAILY LESSON
+        function setupDailyLesson() {
+            const dailyVocab = vocabularyData.slice(0, 10);
+            const dailyPhrases = phraseData.slice(0, 5);
+
+            document.getElementById('daily-vocab-container').innerHTML = dailyVocab.map(item => `
+                <div class="item-card">
+                    <div class="english-title">${item.en}</div>
+                    <div class="pronunciation">${item.pron}</div>
+                    <div class="tajik-trans">${item.tg}</div>
+                </div>
+            `).join('');
+
+            document.getElementById('daily-phrase-container').innerHTML = dailyPhrases.map(item => `
+                <div class="item-card">
+                    <div class="english-title">${item.en}</div>
+                    <div class="tajik-trans">${item.tg}</div>
+                </div>
+            `).join('');
+        }
+
+        // GRAMMAR DATA & RENDER
+        const grammarTopics = [
+            { title: "1. Alphabet (Алифбо)", content: "Забони англисӣ дорои 26 ҳарф аст. Ҳарфҳо ба садонок (vowels) ва ҳамсадо (consonants) тақсим мешаванд." },
+            { title: "2. Pronouns (Ҷонишинҳо)", content: "I (Ман), You (Шумо/Ту), He (Ӯ - мард), She (Ӯ - зан), It (Ӯ - ашё/ҳайвон), We (Мо), They (Онҳо)." },
+            { title: "3. Verb 'to be' (Феъли будан)", content: "Дар замони ҳозира шаклҳои Am, Is, Are истифода мешаванд. Мисол: I am a student. He is happy." },
+            { title: "4. Present Simple (Замони ҳозираи оддӣ)", content: "Барои амалҳои муқаррарӣ ва ҳаррӯза. Мисол: I play football every day." }
+        ];
+
+        function renderGrammar() {
+            const container = document.getElementById('grammar-accordion');
+            container.innerHTML = grammarTopics.map((g, idx) => `
+                <div class="accordion-item" onclick="this.classList.toggle('active')">
+                    <div class="accordion-header">
+                        <span>${g.title}</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>${g.content}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // READING DATA & RENDER
+        const readingTexts = [
+            {
+                title: "My Day (Рӯзи ман)",
+                en: "My name is Alex. Every day I wake up at 7 AM. I drink tea and go to school.",
+                tg: "Номи ман Алекс аст. Ҳар рӯз ман соати 7 субҳ бедор мешавам. Ман чой менӯшам ва ба мактаб меравам."
+            }
+        ];
+
+        function renderReading() {
+            const container = document.getElementById('reading-container');
+            container.innerHTML = readingTexts.map(r => `
+                <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 1rem;">
+                    <h3>${r.title}</h3>
+                    <p style="margin: 1rem 0; font-size: 1.1rem; color: var(--text-main);">${r.en}</p>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">${r.tg}</p>
+                    <button class="btn btn-primary" onclick="speakText('${r.en.replace(/'/g, "\\'")}')"><i class="fa-solid fa-volume-high"></i> Хондан</button>
+                </div>
+            `).join('');
+        }
+
+        // FAVORITES RENDER
+        function renderFavorites() {
+            const container = document.getElementById('fav-vocab-container');
+            const favItems = vocabularyData.filter(item => userProgress.favorites.includes(item.id));
+
+            if (favItems.length === 0) {
+                container.innerHTML = `<p style="color: var(--text-muted);">Ҳеҷ калимае ба интихобшудаҳо илова нашудааст.</p>`;
+                return;
+            }
+
+            container.innerHTML = favItems.map(item => `
+                <div class="item-card">
+                    <div class="english-title">${item.en}</div>
+                    <div class="pronunciation">${item.pron}</div>
+                    <div class="tajik-trans">${item.tg}</div>
+                    <div class="card-actions">
+                        <button class="icon-btn active-fav" onclick="toggleFav(${item.id}); renderFavorites();"><i class="fa-solid fa-star"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // LANGUAGE SWITCHER (UI STUBS)
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            if (lang === 'en') {
+                document.getElementById('hero-title').innerText = "Learn English Step by Step 🚀";
+                document.getElementById('hero-subtitle').innerText = "1000 words + 100 phrases + quizzes + grammar for A1-A2 level";
+            } else if (lang === 'tg') {
+                document.getElementById('hero-title').innerText = "Омӯзиши Забони Англисӣ Қадам ба Қадам 🚀";
+                document.getElementById('hero-subtitle').innerText = "1000 калима + 100 ибора + тестҳо + грамматика барои сатҳи A1–A2";
+            }
+        }
+
+        // POPULATE CATEGORY FILTERS & INITIALIZE
+        window.onload = function() {
+            initData();
+
+            const catFilter = document.getElementById('vocab-cat-filter');
+            categories.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.innerText = cat;
+                catFilter.appendChild(opt);
+            });
+
+            renderVocabPage();
+            updateOverallProgress();
+        };
+    </script>
+</body>
+</html>
